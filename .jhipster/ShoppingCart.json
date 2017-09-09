@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cart",
+            "otherEntityName": "employee",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "shoppingCart"
+        },
+        {
+            "relationshipName": "cartItem",
+            "otherEntityName": "cartItem",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "shoppingCartId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "cartStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "saveForLater",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170907061325",
+    "entityTableName": "shopping_cart",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

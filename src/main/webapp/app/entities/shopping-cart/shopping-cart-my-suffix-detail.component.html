@@ -1,0 +1,45 @@
+
+<div *ngIf="shoppingCart">
+    <h2><span jhiTranslate="armoryApp.shoppingCart.detail.title">Shopping Cart</span> {{shoppingCart.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="armoryApp.shoppingCart.shoppingCartId">Shopping Cart Id</span></dt>
+        <dd>
+            <span>{{shoppingCart.shoppingCartId}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.shoppingCart.cartStatus">Cart Status</span></dt>
+        <dd>
+            <span>{{shoppingCart.cartStatus}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.shoppingCart.saveForLater">Save For Later</span></dt>
+        <dd>
+            <span>{{shoppingCart.saveForLater}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.shoppingCart.cart">Cart</span></dt>
+        <dd>
+            <div *ngIf="shoppingCart.cartId">
+                <a [routerLink]="['/employee-my-suffix', shoppingCart.cartId]">{{shoppingCart.cartId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.shoppingCart.cartItem">Cart Item</span></dt>
+        <dd>
+            <div *ngIf="shoppingCart.cartItemId">
+                <a [routerLink]="['/cart-item-my-suffix', shoppingCart.cartItemId]">{{shoppingCart.cartItemId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'shopping-cart-my-suffix/'+ shoppingCart.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

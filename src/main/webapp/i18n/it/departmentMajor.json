@@ -1,0 +1,16 @@
+{
+    "armoryApp": {
+        "DepartmentMajor" : {
+            "null": "",
+            "APPS": "APPS",
+            "BEAUTY": "BEAUTY",
+            "BOOKS": "BOOKS",
+            "MUSIC": "MUSIC",
+            "GROCERY": "GROCERY",
+            "FINANCIAL": "FINANCIAL",
+            "HEALTH": "HEALTH",
+            "OFFICE": "OFFICE",
+            "SOFTWARE": "SOFTWARE"
+        }
+    }
+}

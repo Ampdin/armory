@@ -1,0 +1,27 @@
+{
+    "armoryApp": {
+        "location" : {
+            "home": {
+                "title": "Locations",
+                "createLabel": "Genera un nuovo Location",
+                "createOrEditLabel": "Genera o modifica un Location",
+                "search": "Cerca Location"
+            },
+            "created": "&Egrave; stato generato un nuovo Location con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Location identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Location con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Location {{ id }}?"
+            },
+            "detail": {
+                "title": "Location"
+            },
+            "locationId": "Location Id",
+            "streetAddress": "Street Address",
+            "postalCode": "Postal Code",
+            "city": "City",
+            "stateProvince": "State Province",
+            "country": "Country"
+        }
+    }
+}

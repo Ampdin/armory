@@ -1,0 +1,97 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTaskLabel" jhiTranslate="armoryApp.task.home.createOrEditLabel">Create or edit a Task</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!task.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="task.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.taskID" for="field_taskID">Task ID</label>
+            <input type="text" class="form-control" name="taskID" id="field_taskID"
+                [(ngModel)]="task.taskID"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.taskName" for="field_taskName">Task Name</label>
+            <input type="text" class="form-control" name="taskName" id="field_taskName"
+                [(ngModel)]="task.taskName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.scaleID" for="field_scaleID">Scale ID</label>
+            <input type="text" class="form-control" name="scaleID" id="field_scaleID"
+                [(ngModel)]="task.scaleID"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.scaleName" for="field_scaleName">Scale Name</label>
+            <input type="text" class="form-control" name="scaleName" id="field_scaleName"
+                [(ngModel)]="task.scaleName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.dataValue" for="field_dataValue">Data Value</label>
+            <input type="number" class="form-control" name="dataValue" id="field_dataValue"
+                [(ngModel)]="task.dataValue"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.n" for="field_n">N</label>
+            <input type="number" class="form-control" name="n" id="field_n"
+                [(ngModel)]="task.n"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.standardError" for="field_standardError">Standard Error</label>
+            <input type="number" class="form-control" name="standardError" id="field_standardError"
+                [(ngModel)]="task.standardError"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.lowerClBound" for="field_lowerClBound">Lower Cl Bound</label>
+            <input type="number" class="form-control" name="lowerClBound" id="field_lowerClBound"
+                [(ngModel)]="task.lowerClBound"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.upperClBound" for="field_upperClBound">Upper Cl Bound</label>
+            <input type="number" class="form-control" name="upperClBound" id="field_upperClBound"
+                [(ngModel)]="task.upperClBound"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.recommendSuppress" for="field_recommendSuppress">Recommend Suppress</label>
+            <input type="text" class="form-control" name="recommendSuppress" id="field_recommendSuppress"
+                [(ngModel)]="task.recommendSuppress"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.notRelevant" for="field_notRelevant">Not Relevant</label>
+            <input type="text" class="form-control" name="notRelevant" id="field_notRelevant"
+                [(ngModel)]="task.notRelevant"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.date" for="field_date">Date</label>
+            <div class="d-flex">
+                <input id="field_date" type="datetime-local" class="form-control" name="date" [(ngModel)]="task.date"
+                  />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.domainSource" for="field_domainSource">Domain Source</label>
+            <input type="text" class="form-control" name="domainSource" id="field_domainSource"
+                [(ngModel)]="task.domainSource"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.task.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                [(ngModel)]="task.description"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

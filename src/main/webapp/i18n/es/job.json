@@ -1,0 +1,29 @@
+{
+    "armoryApp": {
+        "job" : {
+            "home": {
+                "title": "Jobs",
+                "createLabel": "Crear nuevo Job",
+                "createOrEditLabel": "Crear o editar Job",
+                "search": "Search for Job"
+            },
+            "created": "Un nuevo Job ha sido creado con el identificador {{ param }}",
+            "updated": "Un Job ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Job ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Job {{ id }}?"
+            },
+            "detail": {
+                "title": "Job"
+            },
+            "jobId": "Job Id",
+            "jobTitle": "Job Title",
+            "onetCode": "Onet Code",
+            "jobDescription": "Job Description",
+            "minSalary": "Min Salary",
+            "maxSalary": "Max Salary",
+            "employee": "Employee",
+            "task": "Task"
+        }
+    }
+}

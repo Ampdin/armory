@@ -1,0 +1,40 @@
+{
+    "armoryApp": {
+        "employee" : {
+            "home": {
+                "title": "Employees",
+                "createLabel": "Genera un nuovo Employee",
+                "createOrEditLabel": "Genera o modifica un Employee",
+                "search": "Cerca Employee"
+            },
+            "created": "&Egrave; stato generato un nuovo Employee con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Employee identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Employee con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Employee {{ id }}?"
+            },
+            "detail": {
+                "title": "Employee"
+            },
+            "employeeId": "Employee Id",
+            "playerType": "Player Type",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "phone": "Phone",
+            "badgeNumber": "Badge Number",
+            "startDate": "Start Date",
+            "previousSalary": "Previous Salary",
+            "currentSalary": "Current Salary",
+            "goalSalary": "Goal Salary",
+            "pathGoal": "Path Goal",
+            "address": "Address",
+            "city": "City",
+            "zip": "Zip",
+            "state": "State",
+            "department": "Department",
+            "job": "Job",
+            "manager": "Manager"
+        }
+    }
+}

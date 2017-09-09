@@ -1,0 +1,193 @@
+entity Region {
+	regionId Long,
+	regionName String
+}
+
+entity Country {
+	countryId Long,
+	countryName String
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	locationId Long,
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+entity Department {
+	departmentId Long,
+	departmentName String required
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Task {
+    taskID String,
+    taskName String,
+    scaleID String,
+    scaleName String,
+    dataValue BigDecimal,
+    n Long,
+    standardError BigDecimal,
+    lowerClBound BigDecimal,
+    upperClBound BigDecimal,
+    recommendSuppress String,
+    notRelevant String,
+    date ZonedDateTime,
+    domainSource String,
+	description String
+}
+
+/**
+ * The Employee entity.
+ */
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+    employeeId Long,
+    playerType String,
+	firstName String,
+	lastName String,
+	email String,
+	phone String,
+    badgeNumber String,
+	startDate ZonedDateTime,
+	previousSalary Long,
+    currentSalary Long,
+    goalSalary Long,
+    pathGoal String,
+    address String,
+    city String,
+    zip Long,
+    state String
+}
+
+entity Job {
+	jobId Long,
+	jobTitle String,
+    onetCode Long,
+    jobDescription String,
+	minSalary Long,
+	maxSalary Long
+}
+
+entity JobHistory {
+	jobHistoryId Long,
+	startDate ZonedDateTime,
+	endDate ZonedDateTime,
+	language Language
+}
+
+entity ShoppingCart {
+	shoppingCartId Long,
+	cartStatus String,
+    saveForLater String
+}
+
+entity CartItem {
+	cartItemId Long,
+	productName String,
+    productPrice Long,
+    departmentMajor DepartmentMajor,
+    productDescription String
+}
+
+entity Book {
+	bookId Long,
+	bookName String,
+	bookPrice Long,
+    publisher String,
+    language Language,
+    isbn10 String,
+    isbn13 String,
+    productDimensions String,
+    shippingWeight String,
+    ranking String,
+    averageRanking String,
+    author String,
+    subject String,
+    bookDescription String
+}
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH, ITALIAN
+}
+
+enum DepartmentMajor {
+	APPS,
+    BEAUTY,
+    BOOKS,
+    MUSIC,
+    GROCERY,
+    FINANCIAL,
+    HEALTH,
+    OFFICE,
+    SOFTWARE
+}
+
+relationship OneToOne {
+	Country{region} to Region
+}
+
+relationship OneToOne {
+	Location{country} to Country
+}
+
+relationship OneToOne {
+	Department{location} to Location
+}
+
+relationship OneToOne {
+	ShoppingCart{cart} to Employee
+}
+
+relationship ManyToMany {
+	Job{task(title)} to Task{job}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Employee{job} to Job,
+	/**
+	* A relationship
+	*/
+	Department{employee} to
+	/**
+	* Another side of the same relationship
+	*/
+	Employee,
+    /**
+    * Where we fill the Cart
+    */
+    CartItem{shoppingCart} to ShoppingCart,
+    Book{cartItem} to CartItem
+}
+
+relationship ManyToOne {
+	Employee{manager} to Employee
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	JobHistory{job} to Job,
+	JobHistory{department} to Department,
+	JobHistory{employee} to Employee
+}
+
+// Set pagination options
+paginate JobHistory, Employee with infinite-scroll
+paginate Job with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+// Set an angular suffix
+angularSuffix * with mySuffix

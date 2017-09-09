@@ -1,0 +1,36 @@
+{
+    "armoryApp": {
+        "book" : {
+            "home": {
+                "title": "Books",
+                "createLabel": "Create a new Book",
+                "createOrEditLabel": "Create or edit a Book",
+                "search": "Search for Book"
+            },
+            "created": "A new Book is created with identifier {{ param }}",
+            "updated": "A Book is updated with identifier {{ param }}",
+            "deleted": "A Book is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Book {{ id }}?"
+            },
+            "detail": {
+                "title": "Book"
+            },
+            "bookId": "Book Id",
+            "bookName": "Book Name",
+            "bookPrice": "Book Price",
+            "publisher": "Publisher",
+            "language": "Language",
+            "isbn10": "Isbn 10",
+            "isbn13": "Isbn 13",
+            "productDimensions": "Product Dimensions",
+            "shippingWeight": "Shipping Weight",
+            "ranking": "Ranking",
+            "averageRanking": "Average Ranking",
+            "author": "Author",
+            "subject": "Subject",
+            "bookDescription": "Book Description",
+            "cartItem": "Cart Item"
+        }
+    }
+}

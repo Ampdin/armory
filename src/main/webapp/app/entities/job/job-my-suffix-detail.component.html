@@ -1,0 +1,57 @@
+
+<div *ngIf="job">
+    <h2><span jhiTranslate="armoryApp.job.detail.title">Job</span> {{job.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="armoryApp.job.jobId">Job Id</span></dt>
+        <dd>
+            <span>{{job.jobId}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.job.jobTitle">Job Title</span></dt>
+        <dd>
+            <span>{{job.jobTitle}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.job.onetCode">Onet Code</span></dt>
+        <dd>
+            <span>{{job.onetCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.job.jobDescription">Job Description</span></dt>
+        <dd>
+            <span>{{job.jobDescription}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.job.minSalary">Min Salary</span></dt>
+        <dd>
+            <span>{{job.minSalary}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.job.maxSalary">Max Salary</span></dt>
+        <dd>
+            <span>{{job.maxSalary}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.job.employee">Employee</span></dt>
+        <dd>
+            <div *ngIf="job.employeeId">
+                <a [routerLink]="['/employee-my-suffix', job.employeeId]">{{job.employeeId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.job.task">Task</span></dt>
+        <dd>
+            <span *ngFor="let task of job.tasks; let last = last">
+                <a [routerLink]="['/task-my-suffix', task?.id ]">{{task.title}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'job-my-suffix/'+ job.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,77 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "job",
+            "otherEntityName": "job",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "task"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "taskID",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "taskName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "scaleID",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "scaleName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataValue",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "n",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "standardError",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "lowerClBound",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "upperClBound",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "recommendSuppress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "notRelevant",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "domainSource",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170907061321",
+    "javadoc": "Task entity.\n@author The JHipster team.",
+    "entityTableName": "task",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

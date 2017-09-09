@@ -1,0 +1,99 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myBookLabel" jhiTranslate="armoryApp.book.home.createOrEditLabel">Create or edit a Book</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!book.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="book.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.bookId" for="field_bookId">Book Id</label>
+            <input type="number" class="form-control" name="bookId" id="field_bookId"
+                [(ngModel)]="book.bookId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.bookName" for="field_bookName">Book Name</label>
+            <input type="text" class="form-control" name="bookName" id="field_bookName"
+                [(ngModel)]="book.bookName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.bookPrice" for="field_bookPrice">Book Price</label>
+            <input type="number" class="form-control" name="bookPrice" id="field_bookPrice"
+                [(ngModel)]="book.bookPrice"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.publisher" for="field_publisher">Publisher</label>
+            <input type="text" class="form-control" name="publisher" id="field_publisher"
+                [(ngModel)]="book.publisher"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.language" for="field_language">Language</label>
+            <select class="form-control" name="language" [(ngModel)]="book.language" id="field_language" >
+                <option value="FRENCH">{{'armoryApp.Language.FRENCH' | translate}}</option>
+                <option value="ENGLISH">{{'armoryApp.Language.ENGLISH' | translate}}</option>
+                <option value="SPANISH">{{'armoryApp.Language.SPANISH' | translate}}</option>
+                <option value="ITALIAN">{{'armoryApp.Language.ITALIAN' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.isbn10" for="field_isbn10">Isbn 10</label>
+            <input type="text" class="form-control" name="isbn10" id="field_isbn10"
+                [(ngModel)]="book.isbn10"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.isbn13" for="field_isbn13">Isbn 13</label>
+            <input type="text" class="form-control" name="isbn13" id="field_isbn13"
+                [(ngModel)]="book.isbn13"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.productDimensions" for="field_productDimensions">Product Dimensions</label>
+            <input type="text" class="form-control" name="productDimensions" id="field_productDimensions"
+                [(ngModel)]="book.productDimensions"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.shippingWeight" for="field_shippingWeight">Shipping Weight</label>
+            <input type="text" class="form-control" name="shippingWeight" id="field_shippingWeight"
+                [(ngModel)]="book.shippingWeight"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.ranking" for="field_ranking">Ranking</label>
+            <input type="text" class="form-control" name="ranking" id="field_ranking"
+                [(ngModel)]="book.ranking"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.averageRanking" for="field_averageRanking">Average Ranking</label>
+            <input type="text" class="form-control" name="averageRanking" id="field_averageRanking"
+                [(ngModel)]="book.averageRanking"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.author" for="field_author">Author</label>
+            <input type="text" class="form-control" name="author" id="field_author"
+                [(ngModel)]="book.author"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.subject" for="field_subject">Subject</label>
+            <input type="text" class="form-control" name="subject" id="field_subject"
+                [(ngModel)]="book.subject"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.book.bookDescription" for="field_bookDescription">Book Description</label>
+            <input type="text" class="form-control" name="bookDescription" id="field_bookDescription"
+                [(ngModel)]="book.bookDescription"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

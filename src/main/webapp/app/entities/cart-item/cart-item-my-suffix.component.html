@@ -1,0 +1,83 @@
+<div>
+    <h2>
+        <span jhiTranslate="armoryApp.cartItem.home.title">Cart Items</span>
+        <button class="btn btn-primary float-right jh-create-entity create-cart-item-my-suffix" [routerLink]="['/', { outlets: { popup: ['cart-item-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down"  jhiTranslate="armoryApp.cartItem.home.createLabel">
+            Create new Cart Item
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'armoryApp.cartItem.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="cartItems">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="armoryApp.cartItem.cartItemId">Cart Item Id</span></th>
+            <th><span jhiTranslate="armoryApp.cartItem.productName">Product Name</span></th>
+            <th><span jhiTranslate="armoryApp.cartItem.productPrice">Product Price</span></th>
+            <th><span jhiTranslate="armoryApp.cartItem.departmentMajor">Department Major</span></th>
+            <th><span jhiTranslate="armoryApp.cartItem.productDescription">Product Description</span></th>
+            <th><span jhiTranslate="armoryApp.cartItem.book">Book</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cartItem of cartItems ;trackBy: trackId">
+                <td><a [routerLink]="['../cart-item-my-suffix', cartItem.id ]">{{cartItem.id}}</a></td>
+                <td>{{cartItem.cartItemId}}</td>
+                <td>{{cartItem.productName}}</td>
+                <td>{{cartItem.productPrice}}</td>
+                <td jhiTranslate="{{'armoryApp.DepartmentMajor.' + cartItem.departmentMajor}}">{{cartItem.departmentMajor}}</td>
+                <td>{{cartItem.productDescription}}</td>
+                <td>
+                    <div *ngIf="cartItem.bookId">
+                        <a [routerLink]="['../book-my-suffix', cartItem.bookId  ]" >{{cartItem.bookId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../cart-item-my-suffix', cartItem.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'cart-item-my-suffix/'+ cartItem.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'cart-item-my-suffix/'+ cartItem.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myCartItemLabel" jhiTranslate="armoryApp.cartItem.home.createOrEditLabel">Create or edit a Cart Item</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!cartItem.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="cartItem.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.cartItem.cartItemId" for="field_cartItemId">Cart Item Id</label>
+            <input type="number" class="form-control" name="cartItemId" id="field_cartItemId"
+                [(ngModel)]="cartItem.cartItemId"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.cartItem.productName" for="field_productName">Product Name</label>
+            <input type="text" class="form-control" name="productName" id="field_productName"
+                [(ngModel)]="cartItem.productName"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.cartItem.productPrice" for="field_productPrice">Product Price</label>
+            <input type="number" class="form-control" name="productPrice" id="field_productPrice"
+                [(ngModel)]="cartItem.productPrice"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.cartItem.departmentMajor" for="field_departmentMajor">Department Major</label>
+            <select class="form-control" name="departmentMajor" [(ngModel)]="cartItem.departmentMajor" id="field_departmentMajor" >
+                <option value="APPS">{{'armoryApp.DepartmentMajor.APPS' | translate}}</option>
+                <option value="BEAUTY">{{'armoryApp.DepartmentMajor.BEAUTY' | translate}}</option>
+                <option value="BOOKS">{{'armoryApp.DepartmentMajor.BOOKS' | translate}}</option>
+                <option value="MUSIC">{{'armoryApp.DepartmentMajor.MUSIC' | translate}}</option>
+                <option value="GROCERY">{{'armoryApp.DepartmentMajor.GROCERY' | translate}}</option>
+                <option value="FINANCIAL">{{'armoryApp.DepartmentMajor.FINANCIAL' | translate}}</option>
+                <option value="HEALTH">{{'armoryApp.DepartmentMajor.HEALTH' | translate}}</option>
+                <option value="OFFICE">{{'armoryApp.DepartmentMajor.OFFICE' | translate}}</option>
+                <option value="SOFTWARE">{{'armoryApp.DepartmentMajor.SOFTWARE' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.cartItem.productDescription" for="field_productDescription">Product Description</label>
+            <input type="text" class="form-control" name="productDescription" id="field_productDescription"
+                [(ngModel)]="cartItem.productDescription"  />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="armoryApp.cartItem.book" for="field_book">Book</label>
+            <select class="form-control" id="field_book" name="book" [(ngModel)]="cartItem.bookId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="bookOption.id" *ngFor="let bookOption of books; trackBy: trackBookById">{{bookOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

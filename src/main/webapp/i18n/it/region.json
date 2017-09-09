@@ -1,0 +1,23 @@
+{
+    "armoryApp": {
+        "region" : {
+            "home": {
+                "title": "Regions",
+                "createLabel": "Genera un nuovo Region",
+                "createOrEditLabel": "Genera o modifica un Region",
+                "search": "Cerca Region"
+            },
+            "created": "&Egrave; stato generato un nuovo Region con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Region identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Region con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Region {{ id }}?"
+            },
+            "detail": {
+                "title": "Region"
+            },
+            "regionId": "Region Id",
+            "regionName": "Region Name"
+        }
+    }
+}

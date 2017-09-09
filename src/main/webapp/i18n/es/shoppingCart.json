@@ -1,0 +1,26 @@
+{
+    "armoryApp": {
+        "shoppingCart" : {
+            "home": {
+                "title": "Shopping Carts",
+                "createLabel": "Crear nuevo Shopping Cart",
+                "createOrEditLabel": "Crear o editar Shopping Cart",
+                "search": "Search for Shopping Cart"
+            },
+            "created": "Un nuevo Shopping Cart ha sido creado con el identificador {{ param }}",
+            "updated": "Un Shopping Cart ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Shopping Cart ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Shopping Cart {{ id }}?"
+            },
+            "detail": {
+                "title": "Shopping Cart"
+            },
+            "shoppingCartId": "Shopping Cart Id",
+            "cartStatus": "Cart Status",
+            "saveForLater": "Save For Later",
+            "cart": "Cart",
+            "cartItem": "Cart Item"
+        }
+    }
+}

@@ -1,0 +1,77 @@
+
+<div *ngIf="book">
+    <h2><span jhiTranslate="armoryApp.book.detail.title">Book</span> {{book.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="armoryApp.book.bookId">Book Id</span></dt>
+        <dd>
+            <span>{{book.bookId}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.bookName">Book Name</span></dt>
+        <dd>
+            <span>{{book.bookName}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.bookPrice">Book Price</span></dt>
+        <dd>
+            <span>{{book.bookPrice}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.publisher">Publisher</span></dt>
+        <dd>
+            <span>{{book.publisher}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.language">Language</span></dt>
+        <dd>
+            <span jhiTranslate="{{'armoryApp.Language.' + book.language}}">{{book.language}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.isbn10">Isbn 10</span></dt>
+        <dd>
+            <span>{{book.isbn10}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.isbn13">Isbn 13</span></dt>
+        <dd>
+            <span>{{book.isbn13}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.productDimensions">Product Dimensions</span></dt>
+        <dd>
+            <span>{{book.productDimensions}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.shippingWeight">Shipping Weight</span></dt>
+        <dd>
+            <span>{{book.shippingWeight}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.ranking">Ranking</span></dt>
+        <dd>
+            <span>{{book.ranking}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.averageRanking">Average Ranking</span></dt>
+        <dd>
+            <span>{{book.averageRanking}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.author">Author</span></dt>
+        <dd>
+            <span>{{book.author}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.subject">Subject</span></dt>
+        <dd>
+            <span>{{book.subject}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.book.bookDescription">Book Description</span></dt>
+        <dd>
+            <span>{{book.bookDescription}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'book-my-suffix/'+ book.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

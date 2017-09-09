@@ -1,0 +1,97 @@
+
+<div *ngIf="employee">
+    <h2><span jhiTranslate="armoryApp.employee.detail.title">Employee</span> {{employee.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="armoryApp.employee.employeeId">Employee Id</span></dt>
+        <dd>
+            <span>{{employee.employeeId}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.playerType">Player Type</span></dt>
+        <dd>
+            <span>{{employee.playerType}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.firstName">First Name</span></dt>
+        <dd>
+            <span>{{employee.firstName}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{employee.lastName}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.email">Email</span></dt>
+        <dd>
+            <span>{{employee.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.phone">Phone</span></dt>
+        <dd>
+            <span>{{employee.phone}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.badgeNumber">Badge Number</span></dt>
+        <dd>
+            <span>{{employee.badgeNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{employee.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.previousSalary">Previous Salary</span></dt>
+        <dd>
+            <span>{{employee.previousSalary}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.currentSalary">Current Salary</span></dt>
+        <dd>
+            <span>{{employee.currentSalary}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.goalSalary">Goal Salary</span></dt>
+        <dd>
+            <span>{{employee.goalSalary}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.pathGoal">Path Goal</span></dt>
+        <dd>
+            <span>{{employee.pathGoal}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.address">Address</span></dt>
+        <dd>
+            <span>{{employee.address}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.city">City</span></dt>
+        <dd>
+            <span>{{employee.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.zip">Zip</span></dt>
+        <dd>
+            <span>{{employee.zip}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.state">State</span></dt>
+        <dd>
+            <span>{{employee.state}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.department">Department</span></dt>
+        <dd>
+            <div *ngIf="employee.departmentId">
+                <a [routerLink]="['/department-my-suffix', employee.departmentId]">{{employee.departmentId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.employee.manager">Manager</span></dt>
+        <dd>
+            <div *ngIf="employee.managerId">
+                <a [routerLink]="['/employee-my-suffix', employee.managerId]">{{employee.managerId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'employee-my-suffix/'+ employee.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

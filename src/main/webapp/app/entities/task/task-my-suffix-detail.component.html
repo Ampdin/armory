@@ -1,0 +1,77 @@
+
+<div *ngIf="task">
+    <h2><span jhiTranslate="armoryApp.task.detail.title">Task</span> {{task.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="armoryApp.task.taskID">Task ID</span></dt>
+        <dd>
+            <span>{{task.taskID}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.taskName">Task Name</span></dt>
+        <dd>
+            <span>{{task.taskName}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.scaleID">Scale ID</span></dt>
+        <dd>
+            <span>{{task.scaleID}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.scaleName">Scale Name</span></dt>
+        <dd>
+            <span>{{task.scaleName}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.dataValue">Data Value</span></dt>
+        <dd>
+            <span>{{task.dataValue}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.n">N</span></dt>
+        <dd>
+            <span>{{task.n}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.standardError">Standard Error</span></dt>
+        <dd>
+            <span>{{task.standardError}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.lowerClBound">Lower Cl Bound</span></dt>
+        <dd>
+            <span>{{task.lowerClBound}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.upperClBound">Upper Cl Bound</span></dt>
+        <dd>
+            <span>{{task.upperClBound}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.recommendSuppress">Recommend Suppress</span></dt>
+        <dd>
+            <span>{{task.recommendSuppress}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.notRelevant">Not Relevant</span></dt>
+        <dd>
+            <span>{{task.notRelevant}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.date">Date</span></dt>
+        <dd>
+            <span>{{task.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.domainSource">Domain Source</span></dt>
+        <dd>
+            <span>{{task.domainSource}}</span>
+        </dd>
+        <dt><span jhiTranslate="armoryApp.task.description">Description</span></dt>
+        <dd>
+            <span>{{task.description}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'task-my-suffix/'+ task.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

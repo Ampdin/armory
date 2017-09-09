@@ -1,0 +1,76 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "cartItem",
+            "otherEntityName": "cartItem",
+            "otherEntityRelationshipName": "book"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "bookId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "bookName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bookPrice",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "publisher",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "language",
+            "fieldType": "Language",
+            "fieldValues": "FRENCH,ENGLISH,SPANISH,ITALIAN"
+        },
+        {
+            "fieldName": "isbn10",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isbn13",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productDimensions",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shippingWeight",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ranking",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "averageRanking",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "author",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subject",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bookDescription",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170907061327",
+    "entityTableName": "book",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

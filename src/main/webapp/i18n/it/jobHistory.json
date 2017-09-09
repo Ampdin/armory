@@ -1,0 +1,28 @@
+{
+    "armoryApp": {
+        "jobHistory" : {
+            "home": {
+                "title": "JobHistories",
+                "createLabel": "Genera un nuovo Job History",
+                "createOrEditLabel": "Genera o modifica un Job History",
+                "search": "Cerca Job History"
+            },
+            "created": "&Egrave; stato generato un nuovo Job History con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Job History identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Job History con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Job History {{ id }}?"
+            },
+            "detail": {
+                "title": "Job History"
+            },
+            "jobHistoryId": "Job History Id",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "language": "Language",
+            "job": "Job",
+            "department": "Department",
+            "employee": "Employee"
+        }
+    }
+}

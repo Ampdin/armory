@@ -1,0 +1,36 @@
+{
+    "armoryApp": {
+        "task" : {
+            "home": {
+                "title": "Tasks",
+                "createLabel": "Create a new Task",
+                "createOrEditLabel": "Create or edit a Task",
+                "search": "Search for Task"
+            },
+            "created": "A new Task is created with identifier {{ param }}",
+            "updated": "A Task is updated with identifier {{ param }}",
+            "deleted": "A Task is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Task {{ id }}?"
+            },
+            "detail": {
+                "title": "Task"
+            },
+            "taskID": "Task ID",
+            "taskName": "Task Name",
+            "scaleID": "Scale ID",
+            "scaleName": "Scale Name",
+            "dataValue": "Data Value",
+            "n": "N",
+            "standardError": "Standard Error",
+            "lowerClBound": "Lower Cl Bound",
+            "upperClBound": "Upper Cl Bound",
+            "recommendSuppress": "Recommend Suppress",
+            "notRelevant": "Not Relevant",
+            "date": "Date",
+            "domainSource": "Domain Source",
+            "description": "Description",
+            "job": "Job"
+        }
+    }
+}

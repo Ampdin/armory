@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "javadoc": "Where we fill the Cart",
+            "relationshipName": "shoppingCart",
+            "otherEntityName": "shoppingCart",
+            "otherEntityRelationshipName": "cartItem"
+        },
+        {
+            "relationshipName": "book",
+            "otherEntityName": "book",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "cartItemId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "productName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productPrice",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "departmentMajor",
+            "fieldType": "DepartmentMajor",
+            "fieldValues": "APPS,BEAUTY,BOOKS,MUSIC,GROCERY,FINANCIAL,HEALTH,OFFICE,SOFTWARE"
+        },
+        {
+            "fieldName": "productDescription",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170907061326",
+    "entityTableName": "cart_item",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}
