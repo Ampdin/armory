@@ -1,7 +1,7 @@
 {
   "name": "armory",
-  "version": "0.0.1",
-  "description": "Description for armory",
+  "version": "0.0.2",
+  "description": "Description for armory and a part of a microservices.",
   "author": "Xavier Martinez",
   "url": "https://spirovanni.com",
   "private": true,
