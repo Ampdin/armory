@@ -47,7 +47,7 @@ $navbar-border: (
 )  !default;
 $navbar-brand-width:                  155px !default;
 $navbar-brand-bg:                     #fff !default;
-$navbar-brand-logo:                   url('../img/logo.png') !default;
+$navbar-brand-logo:                   url('../images/logo.png') !default;
 $navbar-brand-logo-size:              70px auto !default;
 $navbar-brand-border: (
   bottom: (
@@ -57,10 +57,10 @@ $navbar-brand-border: (
   )
 ) !default;
 
-$navbar-color:                        $gray-600 !default;
-$navbar-hover-color:                  $gray-800 !default;
-$navbar-active-color:                 $gray-800 !default;
-$navbar-disabled-color:               $gray-300 !default;
+$navbar-color:                        $gray-300 !default;
+$navbar-hover-color:                  $gray-600 !default;
+$navbar-active-color:                 $gray-600 !default;
+$navbar-disabled-color:               $gray-200 !default;
 
 // Sidebar
 
