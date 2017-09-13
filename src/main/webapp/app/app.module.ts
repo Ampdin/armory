@@ -3,6 +3,7 @@ import './vendor.ts';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Ng2Webstorage } from 'ng2-webstorage';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { ArmorySharedModule, UserRouteAccessService } from './shared';
 import { ArmoryHomeModule } from './home/home.module';
@@ -50,8 +51,11 @@ import {
         ProfileService,
         customHttpProvider(),
         PaginationConfig,
-        UserRouteAccessService
-    ],
+        UserRouteAccessService,
+        {
+            provide: LocationStrategy,
+            useClass: HashLocationStrategy
+        }],
     bootstrap: [ JhiMainComponent ]
 })
 export class ArmoryAppModule {}
