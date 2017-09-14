@@ -14,24 +14,6 @@ import { ArmoryEntityModule } from './entities/entity.module';
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 
-// Import components
-
-// import {
-//     AppAside,
-//     AppBreadcrumbs,
-//     AppFooter,
-//     AppHeader,
-//     AppSidebar
-// } from './components';
-//
-// const APP_COMPONENTS = [
-//     AppAside,
-//     AppBreadcrumbs,
-//     AppFooter,
-//     AppHeader,
-//     AppSidebar
-// ]
-
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
 import {
@@ -64,7 +46,6 @@ import {
         PageRibbonComponent,
         ActiveMenuDirective,
         FooterComponent
-        // ...APP_COMPONENTS
     ],
     providers: [
         ProfileService,
