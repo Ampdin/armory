@@ -1,4 +1,4 @@
-.app-header.navbar {
+.navbar.navbar-inverse.navbar-expand-md.jh-navbar {
   position: relative;
   flex-direction: row;
   height: $navbar-height;
@@ -6,6 +6,11 @@
   margin: 0;
   background-color: $navbar-bg;
   @include borders($navbar-border);
+
+  .navbar-version {
+      font-size: 10px;
+      color: #ccc
+  }
 
   .navbar-brand {
     display: inline-block;
