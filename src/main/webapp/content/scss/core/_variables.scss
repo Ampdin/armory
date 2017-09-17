@@ -37,7 +37,7 @@ $vimeo:                               #aad450 !default;
 // Navbar
 
 $navbar-height:                       55px !default;
-$navbar-bg:                           #fff !default;
+$navbar-bg:                           $gray-800 !default;
 $navbar-border: (
   bottom: (
     size:                             1px,
@@ -46,7 +46,7 @@ $navbar-border: (
   )
 )  !default;
 $navbar-brand-width:                  155px !default;
-$navbar-brand-bg:                     #fff !default;
+$navbar-brand-bg:                     $gray-800 !default;
 $navbar-brand-logo:                   url('../images/logo-jhipster.png') !default;
 $navbar-brand-logo-size:              70px auto !default;
 $navbar-brand-border: (
@@ -56,6 +56,9 @@ $navbar-brand-border: (
     color:                            $border-color
   )
 ) !default;
+
+$navbar-brand-img-height:             45px !default;
+$navbar-brand-img-width:              70px !default;
 
 $navbar-color:                        $gray-300 !default;
 $navbar-hover-color:                  $gray-600 !default;
