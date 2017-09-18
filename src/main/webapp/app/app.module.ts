@@ -18,6 +18,7 @@ import { PaginationConfig } from './blocks/config/uib-pagination.config';
 
 import {
     JhiMainComponent,
+    JhiSimpleComponent,
     LayoutRoutingModule,
     NavbarComponent,
     FooterComponent,
@@ -42,6 +43,7 @@ import {
     ],
     declarations: [
         JhiMainComponent,
+        JhiSimpleComponent,
         NavbarComponent,
         ErrorComponent,
         PageRibbonComponent,
