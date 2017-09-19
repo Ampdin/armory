@@ -1,4 +1,5 @@
 export * from './constants/pagination.constants';
+export * from './directives/sidebar/sidebar.directive';
 export * from './alert/alert.component';
 export * from './alert/alert-error.component';
 export * from './auth/csrf.service';

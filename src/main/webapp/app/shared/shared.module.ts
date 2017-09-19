@@ -14,7 +14,9 @@ import {
     Principal,
     JhiTrackerService,
     HasAnyAuthorityDirective,
-    JhiLoginModalComponent
+    JhiLoginModalComponent,
+    SIDEBAR_TOGGLE_DIRECTIVES
+
 } from './';
 
 @NgModule({
@@ -24,7 +26,8 @@ import {
     ],
     declarations: [
         JhiLoginModalComponent,
-        HasAnyAuthorityDirective
+        HasAnyAuthorityDirective,
+        SIDEBAR_TOGGLE_DIRECTIVES
     ],
     providers: [
         LoginService,
